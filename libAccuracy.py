@@ -178,7 +178,7 @@ class Accuracy:
 
     def print(self, test_id, labels, measure):
         """Print the a results report to the screen."""
-
+        reports = []
         print()
         print()
         print('Classification & Esitmation Accuracies (Test %s):' % test_id)
@@ -187,12 +187,10 @@ class Accuracy:
         print('\tPrecision    = %6.2f%%' % (self.precision() * 100))
         print('\tRecall       = %6.2f%%' % (self.recall() * 100))
         print('\tF-Score      = %6.2f%%' % (self.fscore() * 100))
-
         print()
         print('\tM Precision  = %6.2f%%' % (self.m_precision() * 100))
         print('\tM Recall     = %6.2f%%' % (self.m_recall() * 100))
         print('\tM F-Score    = %6.2f%%' % (self.m_fscore() * 100))
-
         print()
         print('\tFS Precision = %6.2f%%' % (self.fs_precision() * 100))
         print('\tFS Recall    = %6.2f%%' % (self.fs_recall() * 100))
@@ -201,6 +199,8 @@ class Accuracy:
         print('\tNDE          = %6.2f%%' % (self.nde() * 100))
         print('\tMAPE         = %6.2f%%' % (self.mape() * 100))
         print('\tRMSE         = %6.2f' % (self.rmse()))
+        
+
         print('\tEsitmation   = %6.2f%% (%s %s difference)' % (self.estacc() * 100, format(self.diff(), ',.1f'), measure))
         print()
 
